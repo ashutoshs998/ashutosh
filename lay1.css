@@ -5,48 +5,36 @@ margin:0px;
 div.div1{
 	background-color: 
 	black;width: 97%; 
-<<<<<<< HEAD
-	padding: 15px;
+	padding: 18px;
 
 }
 span.span1{
 	opacity:0.7;
-	font-size:14px; 
+	font-size:17px; 
 	font-family: sans-serif;
-	color: #f2f2f2;
+	color: #A9A9A9;
   text-align: center;
-  padding: 14px 0px;
-  text-decoration: none;
+  font-weight:bold
+  padding: 22px 0px;
+ 
   transition: 0.0s;
-  font-size: 14px;
-	margin-left: 90px;
+  
+	margin-left: 85px;
 }
+
 span.span2{
 	
 	opacity:0.7;
+	margin-left: 1.70em;
 	font-size:14px; 
+	 
 	font-family: sans-serif;
-	color: #f2f2f2;
+	color: #A9A9A9;
   text-align: center;
   padding: 14px 0px;
-  text-decoration: none;
+ 
   transition: 0.0s;
-  font-size: 14px;
-=======
-	padding: 20px;
-
-}
-span.span1{
-	font-size:14px;
-	color: grey; 
-	font-family: sans-serif;
-	margin-left: 80px;
-}
-span.span2{
-	font-size:12px;
-	color: grey; 
-	font-family: sans-serif;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
+  
 }
 
 div.div2{
@@ -55,31 +43,22 @@ div.div2{
 	margin: auto;
 }
 span.span3{
-<<<<<<< HEAD
-	font-size: 32px;
-=======
-	font-size: 35px;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
+	font-size: 34px;
 	font-family: sans-serif;
+	font-weight: lighter;
 }
 span.span4{
+	margin-left: .30em;
 	color: grey;
-<<<<<<< HEAD
-	font-size: 20;
-
-=======
-	font-size: 26;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
+	font-size: 23;
+	font-family: sans-serif;
+     font-size-adjust: 0.50;
 
 }
 div.div4{
 	margin:auto; 
 	margin-left: -5px ; 
-<<<<<<< HEAD
 	margin-top: 15px;
-=======
-	margin-top: 10px;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 }
 div.div
 	{
@@ -89,25 +68,17 @@ div.div
 	}
 	.h2
 	{
-<<<<<<< HEAD
-		font-size: 16px;
-=======
-		font-size: 20px;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
+		font-size: 22px;
 		font-family: sans-serif;
 		color: #0088ff;
+		font-weight: lighter;
 	}
 	.text
 	{
-<<<<<<< HEAD
 		font-weight: normal;
 		opacity: 0.6;
 		font-family: arial;
 		font-size: 13.5px;
-=======
-		font-family: sans-serif;
-		font-size: 12px;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 	}
 	.image{
 		height: 200px;
@@ -120,14 +91,13 @@ div.div
 	}
 	div.footer{
 		clear: both;
-		color: grey;
+		color: black;
 		font-size: 12;
-<<<<<<< HEAD
-		padding:60;
-		margin-left: -60;
-=======
-		padding:30;
-		margin-left: -20;
->>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
+		padding:50;
+		margin-left: -50;
+		margin-bottom: 5;
+		font-family: sans-serif;
+		opacity: 0.7;
+		vertical-align: :center;
 	}
 
