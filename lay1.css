@@ -5,6 +5,7 @@ margin:0px;
 div.div1{
 	background-color: 
 	black;width: 97%; 
+<<<<<<< HEAD
 	padding: 15px;
 
 }
@@ -31,6 +32,21 @@ span.span2{
   text-decoration: none;
   transition: 0.0s;
   font-size: 14px;
+=======
+	padding: 20px;
+
+}
+span.span1{
+	font-size:14px;
+	color: grey; 
+	font-family: sans-serif;
+	margin-left: 80px;
+}
+span.span2{
+	font-size:12px;
+	color: grey; 
+	font-family: sans-serif;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 }
 
 div.div2{
@@ -39,19 +55,31 @@ div.div2{
 	margin: auto;
 }
 span.span3{
+<<<<<<< HEAD
 	font-size: 32px;
+=======
+	font-size: 35px;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 	font-family: sans-serif;
 }
 span.span4{
 	color: grey;
+<<<<<<< HEAD
 	font-size: 20;
 
+=======
+	font-size: 26;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 
 }
 div.div4{
 	margin:auto; 
 	margin-left: -5px ; 
+<<<<<<< HEAD
 	margin-top: 15px;
+=======
+	margin-top: 10px;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 }
 div.div
 	{
@@ -61,16 +89,25 @@ div.div
 	}
 	.h2
 	{
+<<<<<<< HEAD
 		font-size: 16px;
+=======
+		font-size: 20px;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 		font-family: sans-serif;
 		color: #0088ff;
 	}
 	.text
 	{
+<<<<<<< HEAD
 		font-weight: normal;
 		opacity: 0.6;
 		font-family: arial;
 		font-size: 13.5px;
+=======
+		font-family: sans-serif;
+		font-size: 12px;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 	}
 	.image{
 		height: 200px;
@@ -85,7 +122,12 @@ div.div
 		clear: both;
 		color: grey;
 		font-size: 12;
+<<<<<<< HEAD
 		padding:60;
 		margin-left: -60;
+=======
+		padding:30;
+		margin-left: -20;
+>>>>>>> ae2eb9c162639a290701ef5e8281eef274e1bf24
 	}
 
