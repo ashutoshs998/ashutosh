@@ -20,8 +20,9 @@ body{
 	float: left;
 }
 .menu img{
-	padding-left: 30px;
-    margin: 20px auto;
+	padding-left: 19px;
+    margin: 15px auto;
+    margin-top: 25px;
 }
 .settings{
 	float:left;
@@ -39,6 +40,8 @@ body{
 	float: right;
     padding-right: 30px;
     margin: 20px auto;
+    margin-top: 28px;
+   
 }
 .content{
 	background-image: url("black.png");
