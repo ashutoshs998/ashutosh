@@ -48,12 +48,11 @@
 	    	</li>
 	    </ul>
 	<input type="button" name="submit" value="submit">
-
 	</form>
 	<script type="text/javascript">
 	$('input[type=checkbox]').click(function () {
     $(this).parent().find('li input[type=checkbox]').prop('checked', $(this).is(':checked'));
-    var sibs = true;
+    var sibs = false;
     $(this).closest('ul').children('li').each(function () {
         if($('input[type=checkbox]', this).is(':checked')) sibs=true;
     })
