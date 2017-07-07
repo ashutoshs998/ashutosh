@@ -1,0 +1,42 @@
+	<!DOCTYPE html><html>
+	<head>
+		<title></title>
+		<style>
+			table,th,td   { border:1px solid black; margin:0 auto;}
+	        td            { padding:50px 10px; text-transform: uppercase; font-size: 24px; }
+			li		      { list-style-type: none; }
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.min.js"  ></script>
+	</head>
+	<body>
+		<table cellspacing="0" >
+			<tr><th colspan="2">Property Image</th></tr>
+			<tr >
+		    	<td>Property Image</td>
+		    	<td>
+		        	<div id='content'>
+				        <ul>
+				        	<li><input type="text" name="te"> <input type="button" id="f" value="Browse"> <select id="f"><option>Primary Image</option><option>Secondary image</option></select> <button id="remove">Remove</button>
+				        	</li>
+				        </ul>
+		        	</div>
+					<div id='add'><button>Add another</button></div>
+				</td>
+				</tr>
+		</table>
+	</body>
+	</html>
+	<script type="text/javascript">
+		$(document).ready(function(){
+	    $('button').click(function(){
+	        var item = $('input[name=add]').val();
+	        $('ul').append('<li><input type="text"> <input type="button" id="f" value="Browse"> <select id="f"><option>Primary Image</option><option>Secondary image</option></select> <button id="remove">Remove</button></li>');
+	    });
+	    $("#remove").click(function(){
+	       $(this).parent('li').remove();
+	    });
+	   });
+		$('#content').on('click', 'button', function(){
+	  	$(this).closest('li').remove();
+	});
+	</script>
