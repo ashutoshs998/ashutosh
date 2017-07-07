@@ -1,0 +1,65 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>traversing</title>
+		<style type="text/css">
+			.manage{
+				height: 40px; 
+				margin:auto; 
+				border-bottom: 1px solid;
+				align-self: center;
+			}
+		</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+	<form mothod="post">
+	<div class="manage">Manage permission</div><br><br>
+		<select id="sel">
+	    <option>subsubfg</option>
+	    <option>option 1</option>
+	    <option>option 2</option>
+	    </select>
+	    <ul style="list-style: none;" >
+	    	<li><input type="checkbox" name="property" class="parent">property 
+	    	<ul style="list-style: none;">
+	    	<li><input type="checkbox" name="edit"> edit property</li>
+	    	<li><input type="checkbox" name="remove">remove property</li>
+	    	<li><input type="checkbox" name="add">add property</li></ul>
+	    	</li>
+	    	<li><input type="checkbox" name="testimonial" class="parent">testimonial
+	    	<ul style="list-style: none;">
+	    	<li><input type="checkbox" name="edit"> add</li>
+	    	<li><input type="checkbox" name="remove">remove</li>
+	    	<li><input type="checkbox" name="add">view</li>
+	    	<li><input type="checkbox" name="add">edit</li></ul>
+	    	 </li>
+	    	<li><input type="checkbox" name="users" class="parent">users 
+	    	<ul style="list-style: none;">
+	    	<li><input type="checkbox" name="edit"> edit user</li>
+	    	<li><input type="checkbox" name="remove">view user list</li>
+	    	<li><input type="checkbox" name="add">add user</li></ul>
+	    	</li>
+	    	<li><input type="checkbox" name="membership" class="parent">membership 
+	    	<ul style="list-style: none;">
+	    	<li><input type="checkbox" name="edit"> edit membership</li>
+	    	<li><input type="checkbox" name="remove">remove membership</li>
+	    	<li><input type="checkbox" name="add">add membership</li></ul>
+	    	</li>
+	    </ul>
+	<input type="button" name="submit" value="submit">
+
+	</form>
+	<script type="text/javascript">
+	$('input[type=checkbox]').click(function () {
+    $(this).parent().find('li input[type=checkbox]').prop('checked', $(this).is(':checked'));
+    var sibs = true;
+    $(this).closest('ul').children('li').each(function () {
+        if($('input[type=checkbox]', this).is(':checked')) sibs=true;
+    })
+    $(this).parents('ul').prev().prop('checked', sibs);
+});
+
+	</script>
+	</body>
+	</html>
