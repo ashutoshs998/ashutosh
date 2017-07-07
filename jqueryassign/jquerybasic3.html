@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>events</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h1> use of click, hover, focus, mouseover, mouseout and prevent default</h1>
+<a href="#1" id="clk">click</a><br><br><br>
+<a href="#2" id="hov">hover</a><br><br><br>
+<a href="#4" id=mover>mouseover</a><br><br><br>
+<a href="#5" id="mout">mouseout</a><br><br><br>
+<a href="https://www.google.co.in/" id="prevent">prevent default</a><br><br><br>
+<a href="#3" id="foc">focus</a><br><br><br>
+
+
+</body>
+</html>
+<script type="text/javascript">
+	$('#clk').click(function()
+		{			
+			alert('An anchor is clicked.');
+						});
+
+	$('#hov').hover(function()
+		{			
+			alert('An anchor is hovered.');			
+		});
+	
+	$('#foc').focus(function()
+		{			
+			alert('An anchor is in focus.');		
+		});
+	
+	$('#mover').mouseover(function()
+		{	alert('Mouse is over an anchor.');			
+	});
+	
+	$('#mout').mouseout(function()
+		{		
+			alert('Mouse is out from an anchor.');		
+		});
+	
+	$('#prevent').click(function(event)
+		{			
+			event.preventDefault();
+});
+</script>
+	
+
+
