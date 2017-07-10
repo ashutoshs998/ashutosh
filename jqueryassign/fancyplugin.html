@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title></title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<!-- Add fancyBox -->
+		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+</head>
+<body>
+<h2> fancybox plugin</h2><br><br>
+<div>
+	<a class="fancybox" rel="group" href="abc.jpg"><img src="abc.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="bcd.jpg"><img src="bcd.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="cde.jpg"><img src="cde.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="abc.jpg"><img src="abc.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="bcd.jpg"><img src="bcd.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="cde.jpg"><img src="cde.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="abc.jpg"><img src="abc.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="bcd.jpg"><img src="bcd.jpg" style="height:200px;"/></a>
+	<a class="fancybox" rel="group" href="cde.jpg"><img src="cde.jpg" style="height:200px;"/></a>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(".fancybox").fancybox({
+				              helpers : {
+				                  overlay : {
+				                      css : {  'background' : 'rgba(58, 142, 145, 0.95)'       }
+				                  }
+				              }
+				        });
+</script>

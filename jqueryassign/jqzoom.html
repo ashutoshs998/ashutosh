@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jquery.jqzoom.css">
+    <script type="text/javascript" src="jquery-1.6.js"></script>  
+    <script type="text/javascript" src="jquery.jqzoom-core.js"></script>
+</head>
+<body>
+<h2>jqzoom plugin</h2><br><br>
+    <a href="triumph_big1.jpg" class="zoomimage"> 
+    <img  src="triumph_small1.jpg" style=" width: 190px;height: 180px"> </a>
+</body>
+</html>
+<script type="text/javascript">
+        $(document).ready(function(){
+                $('.zoomimage').jqzoom({
+                    zoomType:'standard',
+                    lens:true,
+                })
+            });
+        </script>
