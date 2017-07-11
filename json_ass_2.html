@@ -1,30 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-    <title>Creation of array object in javascript using JSON</title>
-   </head>
-   <body>
-   <script language = "javascript" >
-    document.writeln("<h2>JSON array object</h2>");
-    var persons = { "name" : [ 
-                  { "firstname"  : "ashutosh", "lastname" : "mudgal" },
-                    { "firstname"  : "rahul", "lastname" : "sharma" },
-                   { "firstname"  : "ashish", "lastname" : "sharma" },
-                   { "firstname"  : "aniket", "lastname" : "sharma" }],  
-                  "dob"  : [
-                      { "date"  : "21 jul", "year" : 1993 }, 
-                      { "date"  : "12 Dec", "year" : 1991 },
-                      { "date"  : "19 Dec", "year" : 1990 },
-                      { "date"  : "27 Dec", "year" : 1992 }]    
-              }
-        var i = 0
-        document.writeln("<table border = '1'><tr><th colspan='2'>NAME</th><th colspan='2'>DATE OF BIRTH</th></tr>");
-        document.writeln("<tr><th>First Name</th><th>Last Name</th><th>DATE</th><th>Year</th></tr>");
-        for(i = 0;i<persons.name.length;i++){
-          document.writeln("<tr><td>"+ persons.name[i].firstname +"</td><td>"+ persons.name[i].lastname +"</td>");
-          document.writeln("<td>" + persons.dob[i].date +"</td><td>" + persons.dob[i].year +"</td></tr>");
-        }
-         document.writeln("</tr></table>");
-      </script>
-   </body>	
+<head>
+  <style type="text/css">
+    table{
+          width:350px;
+          border:1;    
+    }
+    th,td{
+      width:33%;
+    }
+  </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="show_div">
+  </div>
+  <script>
+    var person = {"details":[
+        {"first_name":"ashutosh" , "last_name":"mudgal", "date_of_birth":"21/07/1993"},
+        {"first_name":"ashish" , "last_name":"sharma", "date_of_birth":"09/09/1992"},
+        {"first_name":"sachin" , "last_name":"kumar", "date_of_birth":"09/010/1999"},
+        {"first_name":"sanjay" , "last_name":"kumar", "date_of_birth":"11/11/1990"}
+       ]}
+    var tabledata="";
+    tabledata = tabledata +
+                  "<table border=1>" +
+                    "<tr>" +
+                      "<th>First Name</th>" +
+                      "<th>Last Name</th>" +
+                      "<th>Date of Birth</th>" +
+                    "</tr>"
+                  "</table>";
+    function showtable(person)
+     {
+      var i=0;
+      while(i<person.details.length)
+       {
+        tabledata = tabledata + 
+                    "<table border=1 width='400'>" +
+                      "<tr>" +
+                        "<td>" +
+                           person.details[i].first_name +
+                        "</td>";
+        tabledata = tabledata + 
+                        "<td>" + 
+                           person.details[i].last_name + 
+                        "</td>";
+        tabledata = tabledata +
+                        "<td>" +
+                           person.details[i].date_of_birth +
+                        "</td>"
+                      "</tr>"
+                    "</table>";
+        i++;
+       }
+      }
+    $(document).ready(function () {
+      showtable(person); 
+         $('#show_div').html(tabledata);
+       });
+  </script>
+</body>
 </html>
