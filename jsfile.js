@@ -6,31 +6,36 @@ $(document).ready(function(){
         var date=$('#pdate').val();
         var message=$('#pmessage').val();
 		if(!name)
-		{	
-			alert("please enter name");
-			event.preventDefault();	
-		}	
-		if(!email)
-		{	alert("please enter email");
-			event.preventDefault();	
-		}
-		if (!validateEmail(email))
-		{
-			alert('Invalid Email Address');
-			event.preventDefault();
-		}	
-		if(!date)
-		{	alert ("please enter date");
-			event.preventDefault();
-		}
-		if (!message)
-		{	alert("please fill message field");
-			event.preventDefault();
-		}
-		else
-		{	
-			alert("Details Submitted Successfully");
-		}	
+        {   
+            alert("please enter name");
+            event.preventDefault(); 
+            exit();
+        }  
+        if(!email)
+        {   alert("please enter email");
+            event.preventDefault(); 
+            exit();
+        }
+        if (!validateEmail(email))
+        {
+            alert('Invalid Email Address');
+            event.preventDefault();
+            exit();
+        }   
+        if(!date)
+        {   alert ("please enter date");
+            event.preventDefault();
+            exit();
+        }
+        if (!message)
+        {   alert("please fill message field");
+            event.preventDefault();
+            exit();
+        }
+        else
+        {   
+            alert("Details Submitted Successfully");
+        }   
         function validateEmail(email){
 		var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 		if (filter.test(email)) 
@@ -54,6 +59,7 @@ $(document).ready(function(){
         success: function (data) {
 		$('input[type=text], textarea').val('');
 		$('input[type=email], textarea').val('');
+        $('input[type=date], textarea').val('');
                 	console.log(data);
                 }
           });
