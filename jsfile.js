@@ -1,12 +1,12 @@
 $(document).ready(function(){
-
- 	$('#save').click(function(){
-           var name=$('#pname').val();
-           var email=$('#pemail').val();
-           var date=$('#pdate').val();
-           var message=$('#pmessage').val();
+ 	$('#save').click(function(event){
+        event.preventDefault();
+        var name=$('#pname').val();
+        var email=$('#pemail').val();
+        var date=$('#pdate').val();
+        var message=$('#pmessage').val();
 		if(!name)
-		{	exit();
+		{	
 			alert("please enter name");
 			event.preventDefault();	
 		}	
@@ -17,7 +17,7 @@ $(document).ready(function(){
 		if (!validateEmail(email))
 		{
 			alert('Invalid Email Address');
-			e.preventDefault();
+			event.preventDefault();
 		}	
 		if(!date)
 		{	alert ("please enter date");
@@ -31,8 +31,7 @@ $(document).ready(function(){
 		{	
 			alert("Details Submitted Successfully");
 		}	
-      function validateEmail(email)
-	{
+        function validateEmail(email){
 		var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 		if (filter.test(email)) 
 		{
@@ -42,45 +41,50 @@ $(document).ready(function(){
 		{
 			return false;
 		}
-	}
-
-      $.ajax({
-            type: 'POST',
-            url: 'insert.php',
-            data: {
-                    "name":name,
-                    "email":email,
-                    "date":date,
-                    "messages":message
-                    },
-            success: function (response) {
-			$('input[type=text], textarea').val('');
-			$('input[type=email], textarea').val('');
-						
-			$('#success__para').html("You data will be saved");
-                    	console.log(response);
-                    }
-                });
-    return false;
-    });
-
-	auto_load(); 
-});
-
-setInterval(auto_load,1000);
-
-function auto_load(){
-
+	   }
     $.ajax({
-    url: "select.php",
-    cache: false,
-    success: function(data){
-    $("#tablediv").html(data);
-    }
-});
+        type: 'POST',
+        url: 'insert.php',
+        data: {
+                "name":name,
+                "email":email,
+                "date":date,
+                "messages":message
+                },
+        success: function (data) {
+		$('input[type=text], textarea').val('');
+		$('input[type=email], textarea').val('');
+                	console.log(data);
+                }
+          });
+    });
+    setInterval(function() {
+        fetchData();
+    }, 1000);
 
+    function fetchData() {
+        $.ajax({
+            type: 'POST',
+            url: 'select.php',
+            dataType: "json", 
+            success: function(data) {
+                if (data != '') {
+                    $("#table tbody").empty();
+                    var len = data.length;
+                    console.log(data,len, 'data');
+                    var txt = "";
+                    if (len > 0) {
+                        for (var i = 0; i < len; i++) {
+                            $("#table").append("<tr><td>"+data[i].name+"</td>" 
+                                + "<td>"+data[i].email+"</td>" 
+                                +"<td>"+data[i].messages+"</td>" 
+                                +"<td>"+data[i].date+"</td></tr>");
+                        }
+                    }
+                }
+            },
+          
+        });
+    return false; 
 }
-
- 
-
-
+});

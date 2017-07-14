@@ -22,9 +22,9 @@ else{
 	}
     
 $servername = 'localhost';
-$username = 'excelarf';
-$password = '**T0y*6z8e0c';
-$dbname = 'excelarf_ashutosh_m';
+$username = 'root';
+$password = '123';
+$dbname = 'ajaxdb';
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
