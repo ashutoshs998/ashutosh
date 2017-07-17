@@ -1,29 +1,33 @@
 
 table {
     margin: auto;
-    border-collapse: collapse;
     width: 70%;
 }
-th, td {
-    padding: 10px;
+ td {
+    padding: 5px;
+    width: auto;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 th {
+    padding:5px;
     background-color: #ff7f7f;
+    width:auto;
     color: white;
 }
-form{
-    width: 50%;
+tbody{
+    width: 70%;
 }
+form{
+    width: 70%;
+}
+
 #add{
 float: right;
-    margin-right:15%;
 }
 #searchbox{
      width:20%; 
-    margin-left:15%; 
     margin-top:50px;
     margin-bottom: 50px;
 }

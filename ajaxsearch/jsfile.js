@@ -66,27 +66,7 @@ $(document).ready(function(){
         });
         var fireAjax = true;
         var fetchLoop = setInterval(function() {
-                $.ajax({
-                type: 'POST',
-                url: 'select.php',
-                dataType: "json", 
-                success: function(data) {
-                    if (data != '') {
-                        $("#table tbody").empty();
-                        var len = data.length;
-                        // console.log(data,len, 'data');
-                        var txt = "";
-                        if (len > 0) {
-                            for (var i = 0; i < len; i++) {
-                                $("#table").append("<tr><td>"+data[i].name+"</td>" 
-                                    + "<td>"+data[i].email+"</td>" 
-                                    +"<td>"+data[i].messages+"</td>" 
-                                    +"<td>"+data[i].date+"</td></tr>");
-                            }
-                        }
-                    }
-                },
-            });
+             fetchData();
             }, 1000);
             $("#search_data").keyup(function(){
             clearInterval(fetchLoop);
@@ -102,13 +82,13 @@ $(document).ready(function(){
                      success: function(results){
                         var results = JSON.parse(results);
                         if (results != '') {
-                            $("#table tbody").empty();
+                            $(".table tbody").empty();
                             var len = results.length;
                             console.log(results,len, 'results');
                             var txt = "";
                             if (len > 0) {
                                 for (var i = 0; i < len; i++) {
-                                    $("#table").append("<tr><td>"+results[i].name+"</td>" 
+                                    $(".table").append("<tr><td>"+results[i].name+"</td>" 
                                         + "<td>"+results[i].email+"</td>" 
                                         +"<td>"+results[i].messages+"</td>" 
                                         +"<td>"+results[i].date+"</td></tr>");
@@ -119,27 +99,32 @@ $(document).ready(function(){
                 });
             }
         else{
-                $.ajax({
-                type: 'POST',
-                url: 'select.php',
-                dataType: "json", 
-                success: function(data) {
-                    if (data != '') {
-                        $("#table tbody").empty();
-                        var len = data.length;
-                        // console.log(data,len, 'data');
-                        var txt = "";
-                        if (len > 0) {
-                            for (var i = 0; i < len; i++) {
-                                $("#table").append("<tr><td>"+data[i].name+"</td>" 
-                                    + "<td>"+data[i].email+"</td>" 
-                                    +"<td>"+data[i].messages+"</td>" 
-                                    +"<td>"+data[i].date+"</td></tr>");
-                            }
-                        }
-                    }
-                },
-            });
+                fetchData();
         }
     });
+    function fetchData() {
+        $.ajax({
+            type: 'POST',
+            url: 'select.php',
+            dataType: "json", 
+            success: function(data) {
+                if (data != '') {
+                    $(".table tbody").empty();
+                    var len = data.length;
+                    console.log(data,len, 'data');
+                    var txt = "";
+                    if (len > 0) {
+                        for (var i = 0; i < len; i++) {
+                            $(".table").append("<tr><td>"+data[i].name+"</td>" 
+                                + "<td>"+data[i].email+"</td>" 
+                                +"<td>"+data[i].messages+"</td>" 
+                                +"<td>"+data[i].date+"</td></tr>");
+                        }
+                    }
+                }
+            },
+          
+        });
+    return false; 
+}
 });
