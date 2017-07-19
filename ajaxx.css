@@ -1,0 +1,50 @@
+
+table {
+    margin: auto;
+}
+ td {
+    padding: 5px;
+    width: auto;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    padding:5px;
+    background-color: #ff7f7f;
+    width:auto;
+    color: white;
+}
+tbody{
+    width: 60%;
+}
+form{
+    width: 70%;
+}
+#sdiv{
+    margin-left: 7%;
+    width:20%;
+}
+#add{
+float: right;
+}
+#search_data{
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+#save{
+    float: right;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 7%;
+    margin-bottom:10px;
+}
+label {
+    color: #ff7f7f;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+    margin-top: 0px;
+}
+
+
