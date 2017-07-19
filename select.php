@@ -1,8 +1,8 @@
 <?php
     $servername = 'localhost';
-$username = 'root';
-$password = '123';
-$dbname = 'ajaxdb';
+$username = 'excelarf';
+$password = '**T0y*6z8e0c';
+$dbname = 'excelarf_ashutosh_m';
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $end = 5;

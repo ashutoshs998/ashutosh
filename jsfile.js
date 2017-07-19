@@ -27,7 +27,7 @@ $(document).ready(function()
             event.preventDefault();
             exit();
         }
-        if (!message)
+        if (!messages)
         {   alert("please fill message field");
             event.preventDefault();
             exit();
@@ -59,8 +59,6 @@ $(document).ready(function()
             success: function (response) {
       $('input[type=text], textarea').val('');
       $('input[type=email], textarea').val('');
-      $("#myModal").modal("hide");
-      $('#success__para').html("You data will be saved");
                       console.log(response);
                     }
                 });    
@@ -83,14 +81,32 @@ function user(number)
             {
                 rows = JSON.parse(rows);
                 fetchdata=rows.data;
-                table(fetchdata);
                 nextpage=rows.count/5;
                 nextpage=nextpage+1;
-                button(nextpage);
+                pagi(nextpage);
+                showtable(fetchdata);
              },
            });
 }
-function table(fetchdata) {
+function pagi(totalpg)
+    {
+        var buttons = "<ul class='pagination' >"
+            for (var i = 1; i<=totalpg; i ++) 
+            {
+                buttons +=  "<li><a id= "+i+" onclick= 'nextp(" +i+ ")' href= '#'>"+i+"</a></li>"
+            }
+        buttons += "</ul>";
+    $(".pagination").html(buttons);
+    }
+
+
+var mainpage=1;
+function nextp(number)
+    {
+        mainpage=number;
+        user(number);
+    }
+function showtable(fetchdata) {
 var data = "" 
     data+="<br /><h3><center><b>User List</center></b></h3>";
     data+="<div class='table-responsive'>";
@@ -160,21 +176,4 @@ var data = ""
       });  
     }
 
-function button(totalpg)
-    {
-        var buttons = "<ul class='pagination' >"
-            for (var i = 1; i<=totalpg; i ++) 
-            {
-                buttons +=  "<li><a id= "+i+" onclick= 'nextp(" +i+ ")' href= '#'>"+i+"</a></li>"
-            }
-        buttons += "</ul>";
-    $(".pagination").html(buttons);
-    }
 
-
-var mainpage=1;
-function nextp(number)
-    {
-        mainpage=number;
-        user(number);
-    }
