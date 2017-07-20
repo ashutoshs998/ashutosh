@@ -1,10 +1,11 @@
 $(document).ready(function()
     {        
-      $('#save').click(function(){
-           var name=$('#pname').val();
-           var email=$('#pemail').val();
-           var date=$('#pdate').val();
-           var messages=$('#pmessage').val();
+      $('#save').click(function(event){     
+       
+            var name=$('#pname').val();
+            var email=$('#pemail').val();
+            var date=$('#pdate').val();
+            var messages=$('#pmessage').val();
            if(!name)
         {   
             alert("please enter name");
@@ -66,6 +67,7 @@ $(document).ready(function()
     });
 
         user(1);
+        event.preventDefault();
     }); 
 
 function user(number)
@@ -99,7 +101,6 @@ function pagi(totalpg)
     $(".pagination").html(buttons);
     }
 
-
 var mainpage=1;
 function nextp(number)
     {
@@ -123,12 +124,11 @@ var data = ""
     data+= "</table>";
     $(".container").html(data);
     
-    var fetchloop;
      $("input").on('keyup', function()
       {
        var results="";
        clearTimeout(fetchloop);
-       fetchloop = setTimeout(function()
+      var fetchloop = setTimeout(function()
         { 
          var search_data = $('#search_data').val();
          if(search_data != "")
@@ -142,6 +142,7 @@ var data = ""
               dataType: 'json',
               success: function(result)
               {
+                $(".text-center").hide();
                results+= "<div class='table-responsive'>";
                results+= "<table class='table''>";
                if(result==null)
@@ -157,7 +158,7 @@ var data = ""
                 for (var i=0;i<length;i++)
                 {
                     results+="<td>" + result[i].name+ "</td>" 
-                    +"<td>" + result[i].email + "</td>" 
+                    +"<td>" + result[i].email + "</td>"
                     +"<td>" + result[i].date + "</td>" 
                     +"<td>" + result[i].messages + "</td>" +"</tr>";                  
                 }
@@ -165,14 +166,16 @@ var data = ""
                results+= "</table>";
                results+= "</div>";
                $(".container").html(results);
-              },      
+              },     
+
             });
           }
          else
           {
+            $(".text-center").show();
            $(".container").html(data);
           }
-        }, 500);
+        }, 200);
       });  
     }
 

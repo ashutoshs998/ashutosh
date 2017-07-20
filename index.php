@@ -42,7 +42,7 @@
                  <label for="date">Date:</label><br>
                  <input type="date" class="form-control" name="date"  id="pdate" required>
            </div>
-
+           
            <div class="form-group" align="left">
                 <label for="messages">Messages:</label><br>
                 <input type="text" class="form-control" name="messages" id="pmessage" required>
@@ -57,6 +57,7 @@
   </div>
   </div>
   </div>
+  <!--body for table-->
   <div class="container" align="center" style="overflow-x:auto;"></div> 
   <div class="text-center">
     <ul id="button"  class="pagination"></ul>
