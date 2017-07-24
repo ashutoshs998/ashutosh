@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <style type="text/css">
+    table{
+          width:350px;
+          border:1;    
+    }
+    th,td{
+      width:33%;
+    }
+  </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+</head>
+<body>
+  <div id="show_div">
+  </div>
+  <script>
+    var person = {"details":[
+        {"first_name":"ashutosh" , "last_name":"mudgal", "date_of_birth":"21/07/1993"},
+        {"first_name":"ashish" , "last_name":"sharma", "date_of_birth":"09/09/1992"},
+        {"first_name":"sachin" , "last_name":"kumar", "date_of_birth":"09/010/1999"},
+        {"first_name":"sanjay" , "last_name":"kumar", "date_of_birth":"11/11/1990"}
+       ]}
+    var tabledata="";
+    tabledata = tabledata +
+                  "<table border=1>" +
+                    "<tr>" +
+                      "<th>First Name</th>" +
+                      "<th>Last Name</th>" +
+                      "<th>Date of Birth</th>" +
+                    "</tr>"
+                  "</table>";
+    function showtable(person)
+     {
+      var i=0;
+      _.times(5,function(){
+        if (i<person.details.length)
+       {
+        tabledata = tabledata + 
+                      "<tr>" +
+                        "<td>" +
+                           person.details[i].first_name +
+                        "</td>";
+        tabledata = tabledata + 
+                        "<td>" + 
+                           person.details[i].last_name + 
+                        "</td>";
+        tabledata = tabledata +
+                        "<td>" +
+                           person.details[i].date_of_birth +
+                        "</td>"
+                      "</tr>"
+                    "</table>";
+       }
+       i++;
+     });
+      }
+    $(document).ready(function () {
+      showtable(person); 
+         $('#show_div').html(tabledata);
+       });
+  </script>
+</body>
+</html>

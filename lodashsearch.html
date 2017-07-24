@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  </head>
+
+  <body>
+  <div class="container">
+     Type to filter:
+      <input type="text" id="value"><br><br>
+      <div class="data"></div>
+    </div>
+    <script type="text/javascript">
+      var data = [
+      {'name':'ashu', 'email': 'ashu@gmail.com'  , 'message' : 'hiiii'   , 'age':18},
+      {'name':'rajat' , 'email': 'rajat@gmail.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'shubham' , 'email': 'shubham@gmail.com'  , 'message' : 'hiiii'   , 'age':18},
+      {'name':'ashu' , 'email': 'ashu@gmail.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'sanjay' , 'email': 'sanjay@gmail.com'  , 'message' : 'hiiii'   , 'age':18},
+      {'name':'vikas' , 'email': 'vikas@gmail.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'abhi' , 'email': 'abhi@gmail.com'  , 'message' : 'hiiii'   , 'age':18},
+      {'name':'xyz' , 'email': 'xyz@gmail.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'bb' , 'email': 'g@gmil.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'abc' , 'email': 'abc@gmail.com' , 'message' : 'Hello' , 'age':24},
+      {'name':'ashish', 'email': 'ashish@gmail.com'  , 'message' : 'hiiii'   , 'age':18},
+      ];
+
+  function displayData(data) {
+    console.log(_.isEmpty(data));
+    var table1= "<div><table class='table table-bordered table-responsive'><tr><th>Employee Name</th><th>Email</th><th>message</th><th>age</th></tr>";
+    var abc = "<tr><td colspan='4'>NO data Found.</td></tr></table>";
+    if(!_.isEmpty(data)){
+      abc=data.map(function(obj)
+      {
+       return "<tr><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"
+        +obj.message+"</td><td>"+obj.age;
+      }).join('</td></tr>')+"</table><br>"
+    }
+    $('.data').html(table1+abc);
+  }
+
+  $(function() {
+    displayData(data);
+    $('input').keyup(function()
+    {  
+      var val = $(this).val();
+      var regex = new RegExp(val ,'g','i');
+      var result = _.filter(data, function(name)
+    {  
+      console.log(name.email)
+      return regex.test(name.name) + regex.test(name.email);
+     });
+     displayData(result);
+    });
+  });
+    </script>
+  </body>
+</html>
