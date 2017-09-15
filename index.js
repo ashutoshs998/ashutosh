@@ -9,19 +9,22 @@ router.get('/scrape', function(req, res) {
     request(url, function(error, response, html) {
         if (!error) {
             var $ = cheerio.load(html);
-            var details = "";
-            var json = { details: { name: "", price: "" } };
-            var name = "";
+            var json = [];
+            var pname = "";
+            var other_details = "";
+            var current_price = "";
             console.log($("._2kSfQ4").find(".iUmrbN").length);
             $('._2kSfQ4').each(function() {
                 pname = $(".iUmrbN").text().trim();
-                discount_price = $(".BXlZdc").text().trim();
+                other_details = $(".BXlZdc").text().trim();
                 current_price = $("._3o3r66").text().trim();
-                details += $(this).text().trim();
-                json.details.name = pname;
-                json.details.price = current_price;
+                var tempdata = {
+                    name: pname,
+                    odetails: other_details,
+                    price: current_price
+                }
+                json.push(tempdata);
             });
-            console.log(name);
         }
         res.send(json);
     })
